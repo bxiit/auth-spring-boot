@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: bxiit
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: auth-db
+    ports:
+      - '5454:5432'
