@@ -1,26 +1,4 @@
-#spring:
-# application:
-#  name:auth
-security:
-  jwt:
-    token:
-#      secret-key: ${JWT_SECRET}
-      secret-key: secret-key
 spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          github:
-            provider: github
-            client-id: Ov23liJjDiKnYuDZwHzL
-            client-secret: 8406be3323e3bf0b651bce4b7ecbd7137a377cbc
-            scope:
-              - user:email
-              - read:user
-        provider:
-          github:
-            user-name-attribute: login
   datasource:
     username: bxiit
     password: password
@@ -29,8 +7,14 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
   port: 8888
+token:
+  signing:
+    key: asdqwertyasdqwertyasdqwertyasdqwertyasdqwertyasdqwertyasdqwerty
+logging:
+  level:
+    org.zalando.logbook: trace
+logbook:
+  obfuscate:
+    json-body-fields: password
